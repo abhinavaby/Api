@@ -7,11 +7,27 @@ async function fetchData() {
 
         }
         const data=await response.json();
-        console.log(data);
+        const pokemonSprite=data.sprites.front_default;
+        const pokemonImage=document.getElementById("pokemonsprite");
+        pokemonImage.src=pokemonSprite;
+        pokemonImage.style.display="block";
+        
     }
     catch(error){
         console.log(error);
 
+    }
+}
+function mode(){
+    const body=document.querySelector("body");
+    if(body.style.backgroundColor==="black"){
+        body.style.backgroundColor="white";
+        
+    }
+    else{
+        body.style.backgroundColor="black";
+        const box=document.getElementById("a");
+        box.style.backgroundColor="yellow";
     }
 }
 
